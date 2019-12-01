@@ -1,5 +1,5 @@
-﻿<Properties StartupConfiguration="{C9D2C453-B5AE-4B34-B104-35036547CD4D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{C9D2C453-B5AE-4B34-B104-35036547CD4D}|Default">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="Startup.cs" Line="15" Column="43" />
     </Files>
@@ -8,7 +8,7 @@
         <State name="__root__">
           <Node name="the-great-bible-of-hunger" expanded="True">
             <Node name="the-great-bible-of-hunger" expanded="True">
-              <Node name="Startup.cs" selected="True" />
+              <Node name="Dependencies" selected="True" />
             </Node>
           </Node>
         </State>
