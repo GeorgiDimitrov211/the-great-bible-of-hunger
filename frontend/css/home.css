@@ -1,20 +1,61 @@
+/* This targets the h4 header and the two
+orange boxes. */
 .home__container {
     display: flex;
     flex-flow: column;
     justify-content: space-around;
-    padding: 0px 20px;
-    min-height: 100vh;
+    padding: 24px;
+    min-height: var(--vh);
 }
+
+/* This targets the last orange box and
+gives it a higher margin-bottom. */
+.home__container > :last-of-type {
+    margin-bottom: 50px;
+}
+
+/* The design of orange boxes. */
 .home__lets-cook, .home__recommended{
     background-color: var(--orange);
     border-radius: 31px;
     padding: 20px;
+    margin: 25px 0px;
 }
+
+/* The flexbox of these orange boxes. */
 .home__lets-cook--flexie, .home__recommended--flexie {
     display: flex;
     flex-flow: row nowrap;
+}
+
+/* Only when in the two items in the flexbox
+should be space between. */
+.home__spacebetween {
     justify-content: space-between;
 }
-span {
-    margin: 15px 0px;
+
+/* Arrow icon from material icons. */
+.home__icon  {
+    color: var(--white);
+    font-size: 20px;
+}
+
+/* The icon in the 'Let's cook' box had to 
+be positioned differently. */
+.home__icon-letscook {
+    align-self: flex-end;
+    padding: 15px 0px 11px 0px;
+    margin-left: -40px;
+}
+
+/* Position of the 'Recommended' icon. */
+.home__icon-recommended {
+    align-self: flex-start;
+    padding: 13px;
+}
+
+/* Class mames speak for themselves. */
+.home__lets-cook-image, .home__recommended-image {
+    float: right;
+    opacity: 0.9;
 }
