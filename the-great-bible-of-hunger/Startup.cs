@@ -16,7 +16,7 @@ namespace the_great_bible_of_hunger {
 
         public void ConfigureServices(IServiceCollection services) {
             services.AddControllersWithViews();
-            services.AddDbContext<GBOHContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MbmStoreContext")));
+            services.AddDbContext<GBOHContext>(options => options.UseSqlServer(Configuration.GetConnectionString("GBOHContext")));
         }
 
 

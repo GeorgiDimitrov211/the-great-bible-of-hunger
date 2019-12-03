@@ -19,4 +19,12 @@
   <ItemGroup>
     <Folder Include="Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20191203135217_SettingUp2.Designer.cs" />
+    <Compile Remove="Migrations\20191203135217_SettingUp2.cs" />
+    <Compile Remove="Migrations\20191203135905_SettingUp3.cs" />
+    <Compile Remove="Migrations\20191203133946_SettingUp.cs" />
+    <Compile Remove="Migrations\GBOHContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20191203133946_SettingUp.Designer.cs" />
+  </ItemGroup>
 </Project>
