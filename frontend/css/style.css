@@ -1,0 +1,35 @@
+:root {
+    --black: #43413C;
+    --white: #FCFCFC;
+    --red: #CD1422;
+    --orange: #FFB119;
+    --opacity: 5%;
+}
+
+/* 
+- Main title styles 
+- Change things by adding classes on custom one
+*/
+h1 {
+    font-family: 'Abril Fatface', cursive;
+    color: var(--black);
+    text-transform: capitalize;
+    /* In figma font size is 48px, but lets test and find the exact size */
+}
+
+/* Use h2 tag for the content under the main titles */
+h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    /* 
+    - color of this tag is different on landing page
+    - It's going to come with custom "class__name--red"
+    */
+}
+
+/* Use h3 for the numbers in top right corners on main page */
+h3 {
+    font-family: 'Abril Fatface', cursive;
+    opacity: var(--opacity);
+}
