@@ -6,6 +6,11 @@
     --opacity: 5%;
 }
 
+body {
+    min-height: var(--vh);
+    background-color: var(--white);
+}
+
 /* 
 - Main title styles 
 - Change things by adding classes on custom one
@@ -13,7 +18,8 @@
 h1 {
     font-family: 'Abril Fatface', cursive;
     color: var(--black);
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
+    font-size: 38px;
     /* In figma font size is 48px, but lets test and find the exact size */
 }
 
@@ -22,6 +28,7 @@ h2 {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 700;
     color: var(--white);
+    padding: 15px 0px;
     /* 
     - color of this tag is different on landing page
     - It's going to come with custom "class__name--red"
@@ -32,4 +39,13 @@ h2 {
 h3 {
     font-family: 'Abril Fatface', cursive;
     opacity: var(--opacity);
+    font-size: 58px;
+}
+
+/* Use for homescreen */
+h4 {
+    font-family: 'Nunito Sans, sans-serif';
+    color: var(--black);
+    font-size: 24px;
+    font-weight: bolder;
 }

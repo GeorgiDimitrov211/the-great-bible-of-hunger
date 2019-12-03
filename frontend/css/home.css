@@ -1,0 +1,20 @@
+.home__container {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    padding: 0px 20px;
+    min-height: 100vh;
+}
+.home__lets-cook, .home__recommended{
+    background-color: var(--orange);
+    border-radius: 31px;
+    padding: 20px;
+}
+.home__lets-cook--flexie, .home__recommended--flexie {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+span {
+    margin: 15px 0px;
+}
