@@ -1,0 +1,22 @@
+{
+  "ingredients": [
+    {
+      "IngredientID": 1,
+      "Name": "Ground beef",
+      "ImageURL": "https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+      "Type": "Meat"
+    },
+    {
+      "IngredientID": 2,
+      "Name": "Ground chicken",
+      "ImageURL": "https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+      "Type": "Meat"
+    },
+    {
+      "IngredientID": 3,
+      "Name": "Ground fish",
+      "ImageURL": "https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+      "Type": "Meat"
+    }
+  ]
+}
