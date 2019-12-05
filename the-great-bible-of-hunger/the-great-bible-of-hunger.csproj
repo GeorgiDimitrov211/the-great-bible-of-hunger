@@ -26,5 +26,7 @@
     <Compile Remove="Migrations\20191203133946_SettingUp.cs" />
     <Compile Remove="Migrations\GBOHContextModelSnapshot.cs" />
     <Compile Remove="Migrations\20191203133946_SettingUp.Designer.cs" />
+    <Compile Remove="Migrations\20191205084534_settingUp2.cs" />
+    <Compile Remove="Migrations\20191205084534_settingUp2.Designer.cs" />
   </ItemGroup>
 </Project>

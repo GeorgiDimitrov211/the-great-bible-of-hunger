@@ -9,8 +9,8 @@ using the_great_bible_of_hunger.Data;
 namespace the_great_bible_of_hunger.Migrations
 {
     [DbContext(typeof(GBOHContext))]
-    [Migration("20191203140642_SettingUp")]
-    partial class SettingUp
+    [Migration("20191205085509_settingUp")]
+    partial class settingUp
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

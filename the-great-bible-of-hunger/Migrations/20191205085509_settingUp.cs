@@ -2,7 +2,7 @@
 
 namespace the_great_bible_of_hunger.Migrations
 {
-    public partial class SettingUp : Migration
+    public partial class settingUp : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
