@@ -1,0 +1,6 @@
+/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/obj/Debug/netcoreapp3.0/api.csprojAssemblyReference.cache
+/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/obj/Debug/netcoreapp3.0/staticwebassets/api.StaticWebAssets.Manifest.cache
+/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/obj/Debug/netcoreapp3.0/staticwebassets/api.StaticWebAssets.xml
+/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/obj/Debug/netcoreapp3.0/api.MvcApplicationPartsAssemblyInfo.cache
+/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/obj/Debug/netcoreapp3.0/api.AssemblyInfoInputs.cache
+/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/obj/Debug/netcoreapp3.0/api.AssemblyInfo.cs
