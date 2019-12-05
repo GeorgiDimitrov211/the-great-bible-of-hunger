@@ -10,9 +10,11 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Chau+Philomene+One|Nunito+Sans:700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/frontend/css/glide.core.min.css">
     <link rel="stylesheet" href="/frontend/css/reset.css">
     <link rel="stylesheet" href="/frontend/css/style.css">
     <link rel="stylesheet" href="/frontend/css/home.css">
+    <link rel="stylesheet" href="/frontend/css/menu.css">
     <!-- Title -->
     <title>The great bible of hunger</title>
 </head>
@@ -56,8 +58,105 @@
             </div>
         </div>
     </section>
+
+    <section id="recipe-page">
+        <div class="filter" id="filter__trigger--js">
+            <img class="half-circle" src="/frontend/imagesandicons/Slice 1.png">
+            <p class="filter__header">filter</p>
+            <div class="filter__sliders-wrapper">
+                <div class="slider">
+                    <div class="glide pointer">
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                                <li class="glide__slide glide__slide--meal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="pot__icon" width="48" height="37"
+                                        viewBox="0 0 48 37" fill="none">
+                                        <path
+                                            d="M46.5945 14.0663H42.1988V11.4288C42.1988 7.92282 37.1252 5.02429 29.8908 3.95965V0.879141C29.8908 0.393855 29.4978 0 29.0117 0L18.462 0C17.9767 0 17.5828 0.393855 17.5828 0.879141V3.95965C10.3484 5.02429 5.27485 7.92282 5.27485 11.4288L5.27485 14.0663H0.879141C0.393855 14.0663 0 14.4601 0 14.9454C0 15.4307 0.393855 15.8245 0.879141 15.8245H5.27485L5.27485 32.5282C5.27485 33.0144 5.6687 33.4074 6.15399 33.4074H7.5483L10.8073 36.6663C10.9717 36.8316 11.1959 36.9239 11.4288 36.9239L36.0448 36.9239C36.2786 36.9239 36.5019 36.8316 36.6663 36.6663L39.9253 33.4074H41.3196C41.8058 33.4074 42.1988 33.0144 42.1988 32.5282L42.1988 15.8245H46.5945C47.0806 15.8245 47.4736 15.4307 47.4736 14.9454C47.4736 14.4601 47.0806 14.0663 46.5945 14.0663ZM19.3411 1.75828L28.1325 1.75828V3.7425C26.725 3.60008 25.2595 3.51656 23.7368 3.51656C22.2141 3.51656 20.7486 3.60008 19.3411 3.7425V1.75828ZM23.7368 5.27485C32.5959 5.27485 39.0391 7.9026 40.2392 10.5497L7.23445 10.5497C8.43448 7.9026 14.8768 5.27485 23.7368 5.27485ZM35.6808 35.1656L11.7928 35.1656L10.0345 33.4074L37.4391 33.4074L35.6808 35.1656ZM40.4405 31.6491L7.03313 31.6491L7.03313 12.308L40.4405 12.308V31.6491Z"
+                                            fill="#DCCCCC" />
+                                    </svg>
+                                    <span class="meal__name">cooked</span>
+                                </li>
+                                <li class="glide__slide glide__slide--meal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="breakfast__icon" width="48" height="31"
+                                        viewBox="0 0 48 31" fill="none">
+                                        <path
+                                            d="M47.1111 24.8889H44.4222C44.0169 15.4631 37.2018 7.67289 28.2347 5.77689C28.3689 5.34844 28.4444 4.90044 28.4444 4.44444C28.4444 1.99378 26.4507 0 24 0C21.5493 0 19.5556 1.99378 19.5556 4.44444C19.5556 4.90133 19.6418 5.344 19.7769 5.77422C10.8044 7.66667 3.984 15.4604 3.57778 24.8889H0.888889C0.398222 24.8889 0 25.2862 0 25.7778V29.3333C0 29.8249 0.398222 30.2222 0.888889 30.2222H47.1111C47.6027 30.2222 48 29.8249 48 29.3333V25.7778C48 25.2862 47.6027 24.8889 47.1111 24.8889ZM21.3333 4.44444C21.3333 2.97422 22.5298 1.77778 24 1.77778C25.4702 1.77778 26.6667 2.97422 26.6667 4.44444C26.6667 4.80533 26.5911 5.15822 26.4516 5.48533C25.6471 5.38844 24.8302 5.33333 24 5.33333C23.0604 5.33333 22.1369 5.40267 21.2311 5.52622L21.5156 5.41511C21.3947 5.10667 21.3333 4.77956 21.3333 4.44444ZM24 7.11111C33.9947 7.11111 42.1804 15.0071 42.6462 24.8889H5.35378C5.81956 15.0071 14.0044 7.11111 24 7.11111ZM46.2222 28.4444H1.77778V26.6667H46.2222V28.4444Z"
+                                            fill="#DCCCCC" />
+                                    </svg>
+                                    <span class="meal__name">breakfast</span>
+                                </li>
+                                <li class="glide__slide glide__slide--meal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="fish__icon" width="48" height="36"
+                                        viewBox="0 0 48 36" fill="none">
+                                        <path
+                                            d="M43.7384 17.954C43.7384 15.1798 44.8295 12.5062 46.8101 10.4267C47.0624 10.1622 47.0954 9.77341 46.9636 9.43357C46.8308 9.09279 46.4712 8.85744 46.1069 8.83203C45.9064 8.81791 45.705 8.80567 45.4997 8.80567C41.4612 8.80567 37.8708 11.1808 36.4371 14.63C34.2192 12.7651 30.6805 10.2281 26.4594 8.77366C27.0797 6.263 27.9552 4.79916 29.1244 2.84485C29.3814 2.4137 29.6516 1.96466 29.9302 1.47985C30.0903 1.20497 30.0997 0.867952 29.9557 0.583656C29.8116 0.299359 29.5349 0.108258 29.2176 0.0734268L29.1225 0.0630719C28.8307 0.031065 28.5389 0 28.2405 0C22.8991 0 18.9961 2.70176 16.9213 7.82287C7.58376 9.23588 0.541294 16.991 0.240052 17.3261C-0.0800173 17.6838 -0.0800173 18.2251 0.240052 18.5828C0.540352 18.9189 7.58376 26.6721 16.9213 28.0861C19.0149 33.2778 22.8209 35.9089 28.2414 35.9089C28.5342 35.9089 28.8204 35.8798 29.1075 35.8478L29.2167 35.8355C29.533 35.8016 29.8116 35.6096 29.9547 35.3253C30.0987 35.041 30.0903 34.704 29.9302 34.4282C29.6507 33.9443 29.3824 33.4952 29.1244 33.065C27.9552 31.1107 27.0797 29.6469 26.4594 27.1353C30.6805 25.6799 34.2192 23.1438 36.4371 21.279C37.8708 24.7272 41.4612 27.1033 45.4997 27.1033C45.7125 27.1033 45.9205 27.0892 46.1907 27.0722C46.555 27.0477 46.8732 26.8152 47.005 26.4744C47.1368 26.1337 47.0624 25.7477 46.8092 25.4832C44.8295 23.4027 43.7384 20.7292 43.7384 17.954ZM37.8171 19.4216C37.7446 19.0931 37.5027 18.8285 37.1817 18.7278C36.8635 18.6252 36.5124 18.7033 36.2629 18.9293C34.2465 20.7668 30.1138 24.0777 25.0784 25.6037C24.6124 25.7449 24.3309 26.2184 24.4298 26.6947C25.1188 30.0272 26.1675 31.7885 27.4949 34.0074C23.1109 33.7739 20.1587 31.443 18.4831 26.9037C18.3616 26.5733 18.0641 26.3379 17.7149 26.2956C10.3119 25.3871 4.15619 19.8415 2.25178 17.954C4.15337 16.0656 10.2968 10.5227 17.7149 9.61432C18.0651 9.57195 18.3616 9.33661 18.4831 9.00618C20.1587 4.46685 23.1109 2.13693 27.4949 1.90347C26.1675 4.12136 25.1198 5.88268 24.4298 9.21517C24.3319 9.69245 24.6124 10.166 25.0784 10.3072C30.1119 11.8331 34.2465 15.144 36.2629 16.9816C36.5124 17.2075 36.8635 17.2837 37.1817 17.183C37.5027 17.0823 37.7446 16.8168 37.8171 16.4892C38.4648 13.5653 40.9962 11.338 44.0858 10.8099C42.6361 12.9299 41.8556 15.4047 41.8556 17.9559C41.8556 20.507 42.636 22.981 44.0848 25.1019C40.9952 24.571 38.4639 22.3446 37.8171 19.4216Z"
+                                            fill="#DCCCCC" />
+                                        <path
+                                            d="M11.2975 16.0712C11.8174 16.0712 12.2388 15.6498 12.2388 15.1299C12.2388 14.6099 11.8174 14.1885 11.2975 14.1885C10.7775 14.1885 10.3561 14.6099 10.3561 15.1299C10.3561 15.6498 10.7775 16.0712 11.2975 16.0712Z"
+                                            fill="#DCCCCC" />
+                                    </svg>
+                                    <span class="meal__name">fish</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="glide__time glide__border pointer">
+                        <span class="glide__indicator">min</span>
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                                <li class="glide__slide">15</li>
+                                <li class="glide__slide">30</li>
+                                <li class="glide__slide">45</li>
+                                <li class="glide__slide">60</li>
+                                <li class="glide__slide">75</li>
+                                <li class="glide__slide">90</li>
+                                <li class="glide__slide">105</li>
+                                <li class="glide__slide">120+</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="glide__cuisine glide__border pointer">
+                        <span class="glide__indicator">cuisine</span>
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                                <li class="glide__slide">indian</li>
+                                <li class="glide__slide">asian</li>
+                                <li class="glide__slide">italian</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="glide__cuisine glide__border pointer">
+                        <span class="glide__indicator">diet</span>
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                                <li class="glide__slide">all</li>
+                                <li class="glide__slide">vegan</li>
+                                <li class="glide__slide">vegetarian</li>
+                                <li class="glide__slide">gluten free</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="submit-filter" id="submit-fliter--js">Ok</a>
+        </div>
     
+        <a href="#" class="menu__trigger" id="menu__trigger--js">
+            <img src="/frontend/imagesandicons/filter.png">
+        </a>    
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script src="/frontend/js/script.js"></script>
     <script src="/frontend/js/home.js"></script>
+    <script src="/frontend/js/menu.js"></script>
 </body>
 </html>
