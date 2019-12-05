@@ -9,4 +9,24 @@
   <ItemGroup>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20191203135217_SettingUp2.Designer.cs" />
+    <Compile Remove="Migrations\20191203135217_SettingUp2.cs" />
+    <Compile Remove="Migrations\20191203135905_SettingUp3.cs" />
+    <Compile Remove="Migrations\20191203133946_SettingUp.cs" />
+    <Compile Remove="Migrations\GBOHContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20191203133946_SettingUp.Designer.cs" />
+    <Compile Remove="Migrations\20191205084534_settingUp2.cs" />
+    <Compile Remove="Migrations\20191205084534_settingUp2.Designer.cs" />
+  </ItemGroup>
 </Project>
