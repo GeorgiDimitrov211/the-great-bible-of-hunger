@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace the_great_bible_of_hunger.Models {
+namespace api.Models {
     public class Rating {
         public int RatingID { get; set; }
         public int ReviewsNumber { get; set; }

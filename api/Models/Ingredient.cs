@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace the_great_bible_of_hunger.Models {
+namespace api.Models {
     public class Ingredient {
         public int IngredientID { get; set; }
         public string Name { get; set; }

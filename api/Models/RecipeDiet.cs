@@ -1,5 +1,6 @@
 ﻿using System;
-namespace the_great_bible_of_hunger.Models {
+
+namespace api.Models {
     public class RecipeDiet {
 
         public int DietID { get; set; }

@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using tboh_api.Models;
-using tboh_api.Data;
+using api.Models;
+using api.Data;
 
 
-namespace tboh_api.Data {
+namespace api.Data {
     public class GBOHContext : DbContext {
         public GBOHContext(DbContextOptions<GBOHContext> options) : base(options) {
 

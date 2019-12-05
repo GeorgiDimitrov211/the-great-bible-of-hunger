@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace the_great_bible_of_hunger.Models {
+namespace api.Models {
     public class Recipe {
         public int RecipeID { get; set; }
         public decimal Price { get; set; }
