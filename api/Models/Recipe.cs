@@ -1,34 +1,32 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace api.Models {
     public class Recipe {
-        public int RecipeID { get; set; }
+        public int RecipeId { get; set; }
         public decimal Price { get; set; }
         public int Time { get; set; }
         public string ImageURL { get; set; }
         public string Title { get; set; }
-        public int CuisineID { get; set; }
-        public Cuisine Cuisine { get; set; }
-        public int DishTypeID { get; set; }
-        public DishType DishType { get; set; }
-        public int RatingID { get; set; }
-        public Rating Rating { get; set; }
-        [NotMapped]
-        public ICollection<string> Description { get; set; }
-        public virtual ICollection<RecipeDiet> RecipeDiets { get; set; }
-        public virtual ICollection<RecipeIngredient> RecipeIngredients { get; set; }
-
+        public int CuisineId { get; set; }
+        public int DishTypeId { get; set; }
+        public int RatingId { get; set; }
+        public ICollection<RecipeDiet> RecipeDiets { get; set; } = new List<RecipeDiet>();
+        public ICollection<RecipeIngredient> RecipeIngredients { get; set; } = new List<RecipeIngredient>();
+        public ICollection<RecipeRecipeStep> RecipeRecipeSteps { get; set; } = new List<RecipeRecipeStep>();
+        
         public Recipe() { }
-        public Recipe(decimal price, int time, string imageUrl, string title, int cuisineID, int dishtypeID, int ratingID) {
+        public Recipe(int Id, decimal price, int time, string imageUrl, string title, int cuisineId, int dishtypeId, int ratingId) {
+            RecipeId = Id; 
             Price = price;
             Time = time;
             ImageURL = imageUrl;
             Title = title;
-            CuisineID = cuisineID;
-            DishTypeID = dishtypeID;
-            RatingID = ratingID;
+            CuisineId = cuisineId;
+            DishTypeId = dishtypeId;
+            RatingId = ratingId;
         }
     }
 }

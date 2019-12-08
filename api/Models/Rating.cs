@@ -3,13 +3,14 @@ using System.Collections.Generic;
 
 namespace api.Models {
     public class Rating {
-        public int RatingID { get; set; }
+        public int RatingId { get; set; }
         public int ReviewsNumber { get; set; }
         public double Stars { get; set; }
-        public ICollection<Recipe> Recipes { get; set; }
+        public virtual ICollection<Recipe> Recipes { get; set; }
 
         public Rating() { }
-        public Rating(int reviewsNumber, double stars) {
+        public Rating(int Id, int reviewsNumber, double stars) {
+            RatingId = Id;
             ReviewsNumber = reviewsNumber;
             Stars = stars;
         }

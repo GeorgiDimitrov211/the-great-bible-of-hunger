@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using api.Models;
 using api.Data;
@@ -15,6 +16,9 @@ namespace api.Data {
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<RecipeDiet> RecipeDiets { get; set; }
+        public DbSet<RecipeRecipeStep> RecipeRecipeSteps { get; set; }
+        public DbSet<RecipeIngredient> RecipeIngredients { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
@@ -25,76 +29,86 @@ namespace api.Data {
             modelBuilder.Entity<Rating>().ToTable("Rating");
             modelBuilder.Entity<Recipe>().ToTable("Recipe");
 
+            modelBuilder.Entity<RecipeDiet>()
+                .HasKey(rd => new { rd.RecipeId, rd.DietId });
+
+            modelBuilder.Entity<RecipeRecipeStep>()
+                .HasKey(rrs => new { rrs.RecipeStepId, rrs.RecipeId });
+
+            modelBuilder.Entity<RecipeIngredient>()
+                .HasKey(ri => new { ri.IngredientId, ri.RecipeId });
+
+                
+            modelBuilder.Entity<RecipeDiet>()
+                .HasOne(rd => rd.Recipe)
+                .WithMany(r => r.RecipeDiets)
+                .HasForeignKey(rd => rd.RecipeId);  
+            modelBuilder.Entity<RecipeDiet>()
+                .HasOne(rd => rd.Diet)
+                .WithMany(d => d.RecipeDiets)
+                .HasForeignKey(rd => rd.DietId);
+
             modelBuilder.Entity<Diet>().HasData(
-                new Diet { DietID = 1, Name = "Vegan" },
-                new Diet { DietID = 2, Name = "Vegetarian" },
-                new Diet { DietID = 3, Name = "Gluten-free" }
+                new Diet(1, "Vegan"),
+                new Diet(2, "Vegetarian"),
+                new Diet(3, "Gluten-free")
             );
 
             modelBuilder.Entity<Rating>().HasData(
-                new Rating { RatingID = 1, ReviewsNumber = 1, Stars = 5 },
-                new Rating { RatingID = 2, ReviewsNumber = 156, Stars = 4.3 },
-                new Rating { RatingID = 3, ReviewsNumber = 20, Stars = 3.8 }
+                new Rating(1, 232, 5),
+                new Rating(2, 156, 4.3),
+                new Rating(3, 20, 3.8)
             );
-
-            modelBuilder.Entity<Rating>().HasMany(r => r.Recipes).WithOne(r => r.Rating);
 
             modelBuilder.Entity<Cuisine>().HasData(
-
-                new Cuisine { CuisineID = 1, Name = "Asian" },
-                new Cuisine { CuisineID = 2, Name = "Italian" },
-                new Cuisine { CuisineID = 3, Name = "Indian" }
+                new Cuisine(1, "Asian"),
+                new Cuisine(2, "Italian"),
+                new Cuisine(3, "Indian")
             );
-
-            modelBuilder.Entity<Cuisine>().HasMany(c => c.Recipes).WithOne(c => c.Cuisine);
 
 
             modelBuilder.Entity<DishType>().HasData(
-                new DishType { DishTypeID = 1, Name = "Breakfast" },
-                new DishType { DishTypeID = 2, Name = "Dinner" },
-                new DishType { DishTypeID = 3, Name = "Lunch" },
-                new DishType { DishTypeID = 4, Name = "Dessert" }
+                new DishType(1, "Breakfast"),
+                new DishType(2, "Dinner"),
+                new DishType(3, "Lunch"),
+                new DishType(4, "Dessert")
             );
-            modelBuilder.Entity<DishType>().HasMany(d => d.Recipes).WithOne(d => d.DishType);
-
 
             modelBuilder.Entity<Ingredient>().HasData(
-                new Ingredient { IngredientID = 1, Name = "Tomato", ImageURL = "", Type = "Vegetable" },
-                new Ingredient { IngredientID = 2, Name = "Cucumber", ImageURL = "", Type = "Vegetable" },
-                new Ingredient { IngredientID = 3, Name = "Pork", ImageURL = "", Type = "Meat" },
-                new Ingredient { IngredientID = 4, Name = "Spaghetti", ImageURL = "", Type = "Pasta" },
-                new Ingredient { IngredientID = 5, Name = "Rise", ImageURL = "", Type = "Grain" }
+                new Ingredient (1, "Tomato", "url", "Vegetable"),
+                new Ingredient (2, "Cucumber", "url", "Vegetable"),
+                new Ingredient (3, "Pork", "url", "Meat"),
+                new Ingredient (4, "Potato", "url", "Vegetable"),
+                new Ingredient (5, "Onion", "url", "Vegetable"),
+                new Ingredient (6, "Asparagus", "url", "Vegetable"),
+                new Ingredient (7, "Chilli peppers", "url", "Vegetable"),
+                new Ingredient (8, "Lettuce", "url", "Vegetable"),
+                new Ingredient (9, "Leeks", "url", "Vegetable"),
+                new Ingredient (10, "Eggplant", "url", "Vegetable"),
+                new Ingredient (11, "Mushrooms", "url", "Vegetable"),
+                new Ingredient (12, "Peas", "url", "Vegetable"),
+                new Ingredient (13, "Pumpkin", "url", "Vegetable"),
+                new Ingredient (14, "Beans", "url", "Grain"),
+                new Ingredient (15, "Lasagne", "url", "Pasta"),
+                new Ingredient (16, "Spahetti", "url", "Pasta"),
+                new Ingredient (17, "Macaroni", "url", "Pasta"),
+                new Ingredient (18, "Rigatoni", "url", "Pasta")
             );
 
             modelBuilder.Entity<Recipe>().HasData(
-                new Recipe { RecipeID = 1, ImageURL = "https://via.placeholder.com/150", Price = 70, Time = 20, Title = "Placeholder dish", CuisineID = 1, RatingID = 1, DishTypeID = 1 },
-                new Recipe { RecipeID = 2, ImageURL = "https://via.placeholder.com/150", Price = 80, Time = 40, Title = "Placeholder dish", CuisineID = 2, RatingID = 2, DishTypeID = 3 },
-                new Recipe { RecipeID = 3, ImageURL = "https://via.placeholder.com/150", Price = 65, Time = 60, Title = "Placeholder dish", CuisineID = 3, RatingID = 3, DishTypeID = 4 }
+                new Recipe (1, 70, 20, "https://via.placeholder.com/150", "Placeholder Dish", 1, 1, 1),
+                new Recipe (2, 80, 40, "https://via.placeholder.com/150", "Placeholder Dish", 2, 2, 3),
+                new Recipe (3, 65, 60, "https://via.placeholder.com/150", "Placeholder Dish", 3, 3, 1),
+                new Recipe (4, 95, 30, "https://via.placeholder.com/150", "Placeholder Dish", 2, 2, 1),
+                new Recipe (5, 75, 50, "https://via.placeholder.com/150", "Placeholder Dish", 3, 2, 2)
             );
 
-            modelBuilder.Entity<RecipeDiet>()
-                .HasKey(rd => new { rd.DietID, rd.RecipeID });
-
-            modelBuilder.Entity<RecipeDiet>()
-                .HasOne(diet => diet.Diet)
-                .WithMany(recipe => recipe.RecipeDiets)
-                .HasForeignKey(rd => rd.DietID);
-            modelBuilder.Entity<RecipeDiet>()
-                .HasOne(recipe => recipe.Recipe)
-                .WithMany(diet => diet.RecipeDiets)
-                .HasForeignKey(rd => rd.RecipeID);
-
-            modelBuilder.Entity<RecipeIngredient>()
-                .HasKey(ri => new { ri.IngredientID, ri.RecipeID });
-
-            modelBuilder.Entity<RecipeIngredient>()
-                .HasOne(ingredient => ingredient.Ingredient)
-                .WithMany(recipe => recipe.RecipeIngredients)
-                .HasForeignKey(ri => ri.IngredientID);
-            modelBuilder.Entity<RecipeIngredient>()
-                .HasOne(recipe => recipe.Recipe)
-                .WithMany(ing => ing.RecipeIngredients)
-                .HasForeignKey(ri => ri.RecipeID);
+            modelBuilder.Entity<RecipeDiet>().HasData(
+                new RecipeDiet(1, 1),
+                new RecipeDiet(2, 2),
+                new RecipeDiet(3, 3),
+                new RecipeDiet(3, 2)
+            );
         }
     }
 }

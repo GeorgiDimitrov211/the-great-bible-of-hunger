@@ -3,12 +3,13 @@ using System.Collections.Generic;
 
 namespace api.Models {
     public class Cuisine {
-        public int CuisineID { get; set; }
+        public int CuisineId { get; set; }
         public string Name { get; set; }
-        public ICollection<Recipe> Recipes { get; set; }
+        public virtual ICollection<Recipe> Recipes { get; set; }
 
         public Cuisine() { }
-        public Cuisine(string name) {
+        public Cuisine(int Id, string name) {
+            CuisineId = Id;
             Name = name;
         }
     }

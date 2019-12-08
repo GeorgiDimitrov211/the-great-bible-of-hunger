@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using api.Data;
 
 namespace api
@@ -33,6 +34,11 @@ namespace api
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseMvc();
+            
+            if (!env.IsDevelopment())
+            {
+                app.UseHsts();
+            }
         }
     }
 }

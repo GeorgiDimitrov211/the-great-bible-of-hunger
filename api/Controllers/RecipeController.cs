@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using api.Models;
 using Microsoft.EntityFrameworkCore;
 using api.Data;
@@ -18,7 +19,7 @@ namespace api.Controllers
     [HttpGet]
     public ActionResult<IEnumerable<Recipe>> GetRecipes()
     {
-      return _context.Recipes;
+      return _context.Recipes.ToList();
     }
 
     // // Get a specific command by number

@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/the-great-bible-of-hunger/the-great-bible-of-hunger.csproj",
+                "${workspaceFolder}/api/api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/the-great-bible-of-hunger/the-great-bible-of-hunger.csproj",
+                "${workspaceFolder}/api/api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,7 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/the-great-bible-of-hunger/the-great-bible-of-hunger.csproj",
+                "${workspaceFolder}/api/api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
