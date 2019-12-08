@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/the-great-bible-of-hunger/bin/Debug/netcoreapp3.0/the-great-bible-of-hunger.dll",
+            "program": "${workspaceFolder}/api/bin/Debug/netcoreapp3.0/api.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/the-great-bible-of-hunger",
+            "cwd": "${workspaceFolder}/api",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
