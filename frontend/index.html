@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="/frontend/css/glide.core.min.css">
     <link rel="stylesheet" href="/frontend/css/reset.css">
     <link rel="stylesheet" href="/frontend/css/style.css">
-    <link rel="stylesheet" href="/frontend/css/home.css">
     <link rel="stylesheet" href="/frontend/css/menu.css">
+    <link rel="stylesheet" href="/frontend/css/home.css">
     <link rel="stylesheet" href="/frontend/css/recipe-guide.css">
     <link rel="stylesheet" href="/frontend/css/ingredients.css">
     <link rel="stylesheet" href="/frontend/css/landing-page.css">
@@ -70,7 +70,7 @@
             <h4>Student Bible</h4>
         </div>
 
-        <div class="home__lets-cook home__position">
+        <div class="home__lets-cook home__position" id="lets-cook__button">
             <div class="home__lets-cook--flexie home__spacebetween">
                 <h1>Let's <br> cook</h1>
                 <h3 class="home__number">01</h3>
@@ -103,11 +103,11 @@
     <section id="ingredients-page">
         <div class="ingredients__heading">
             <div>
-                <span class="material-icons">
+                <span class="material-icons back-button">
                     arrow_back
                 </span>
             </div>
-            <h1>Add ingredients</h1>
+            <h1>Add<br>ingredients</h1>
         </div>  
         <div class="ingredients__input-field">
             <input id="ingredients__input-value" type="text" placeholder="Type here...">
@@ -217,17 +217,17 @@
     <section id="recipe-listing-page" class="fixed-nav">
         <div class="fixed-nav__wrapper">
             <div class="fixed-nav__item">
-                <a href="" class="fixed-nav__link">
+                <span href="" class="fixed-nav__link" id="products__button">
                     <svg width="16" height="26" viewBox="0 0 16 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M15.5294 13.4815H15.4433C15.4946 13.0024 15.5294 12.52 15.5294 12.037C15.5294 6.47063 12.2405 0 8 0C3.75953 0 0.470588 6.47063 0.470588 12.037C0.470588 12.52 0.505411 13.0024 0.556235 13.4815H0.470588C0.210824 13.4815 0 13.6967 0 13.963V16.8519C0 17.6959 0.859765 18.3329 1.94776 19.1394C3.24047 20.097 4.70588 21.1833 4.70588 22.6296C4.70588 22.9652 4.63106 23.0509 3.83718 23.1978C3.21223 23.3129 2.35671 23.4703 1.93176 24.3403C1.89929 24.4073 1.88235 24.4809 1.88235 24.5556V25.5185C1.88235 25.7848 2.09318 26 2.35294 26H13.6471C13.9073 26 14.1176 25.7848 14.1176 25.5185V24.5556C14.1176 24.4814 14.1007 24.4077 14.0687 24.3413C13.6456 23.4693 12.7882 23.3119 12.1628 23.1968C11.3689 23.0504 11.2941 22.9647 11.2941 22.6296C11.2941 21.1833 12.7591 20.097 14.0518 19.1394C15.1407 18.3329 16 17.6959 16 16.8519V13.963C16 13.6967 15.7896 13.4815 15.5294 13.4815ZM1.41176 12.037C1.41176 7.02096 4.35059 0.962963 8 0.962963C11.6494 0.962963 14.5882 7.02144 14.5882 12.037C14.5882 12.5195 14.5605 13.0039 14.5059 13.4815H1.49412C1.43953 13.0043 1.41176 12.52 1.41176 12.037ZM15.0588 16.8519C15.0588 17.2043 14.1944 17.8447 13.5002 18.3594C12.0979 19.3984 10.3529 20.6917 10.3529 22.6296C10.3529 23.8425 11.3421 24.024 11.9962 24.1444C12.5802 24.2517 12.9647 24.3451 13.1765 24.6807V25.037H2.82353V24.6817C3.03624 24.3466 3.42071 24.2527 4.00424 24.1453C4.65835 24.0245 5.64706 23.8425 5.64706 22.6296C5.64706 20.6917 3.90212 19.3984 2.49976 18.3594C1.80518 17.8447 0.941176 17.2043 0.941176 16.8519V14.4444H1.08282H14.9172H15.0588V16.8519Z"
                             fill="#B8B8B9" />
                     </svg>
                     <span class="fixed-nav__text">Products</span>
-                </a>
+                </span>
             </div>
             <div class="fixed-nav__item">
-                <a href="" class="fixed-nav__link">
+                <span href="" class="fixed-nav__link" id="recipe__button">
 
                     <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -236,17 +236,17 @@
                     </svg>
 
                     <span class="fixed-nav__text">Recipes</span>
-                </a>
+                </span>
             </div>
             <div class="fixed-nav__item">
-                <a href="" class="fixed-nav__link">
+                <span href="" class="fixed-nav__link">
                     <svg width="18" height="28" viewBox="0 0 18 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M17.6666 27.0447L8.99998 19.8227L0.333313 27.0447V0.955322H17.6666V27.0447ZM8.99998 18.0873L16.3333 24.1987V2.28866H1.66665V24.1987L8.99998 18.0873Z"
                             fill="#B8B8B9" />
                     </svg>
                     <span class="fixed-nav__text">Saved</span>
-                </a>
+                </span>
             </div>
         </div>
     </section>

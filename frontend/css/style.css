@@ -64,3 +64,9 @@ p {
     font-size: 15px;
 }
 
+/* back button should be the same for all of the pages*/
+.back-button {
+    /* margin-top: 50px;
+    margin-left: 10px; */
+    font-size: 30px;
+}
