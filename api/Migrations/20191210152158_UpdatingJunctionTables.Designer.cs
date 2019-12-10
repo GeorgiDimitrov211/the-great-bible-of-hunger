@@ -9,8 +9,8 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(GBOHContext))]
-    [Migration("20191206142737_CreateRecipeSteps")]
-    partial class CreateRecipeSteps
+    [Migration("20191210152158_UpdatingJunctionTables")]
+    partial class UpdatingJunctionTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -454,6 +454,158 @@ namespace api.Migrations
                     b.HasIndex("RecipeId");
 
                     b.ToTable("RecipeIngredients");
+
+                    b.HasData(
+                        new
+                        {
+                            IngredientId = 1,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            IngredientId = 10,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            IngredientId = 11,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            IngredientId = 8,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            IngredientId = 3,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            IngredientId = 9,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            IngredientId = 4,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            IngredientId = 15,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            IngredientId = 1,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            IngredientId = 17,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            IngredientId = 12,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            IngredientId = 5,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            IngredientId = 3,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            IngredientId = 2,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            IngredientId = 5,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            IngredientId = 8,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            IngredientId = 4,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            IngredientId = 10,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            IngredientId = 4,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            IngredientId = 7,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            IngredientId = 9,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            IngredientId = 8,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            IngredientId = 12,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            IngredientId = 3,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            IngredientId = 2,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            IngredientId = 6,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            IngredientId = 9,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            IngredientId = 12,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            IngredientId = 11,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            IngredientId = 17,
+                            RecipeId = 5
+                        });
                 });
 
             modelBuilder.Entity("api.Models.RecipeRecipeStep", b =>
@@ -469,6 +621,123 @@ namespace api.Migrations
                     b.HasIndex("RecipeId");
 
                     b.ToTable("RecipeRecipeSteps");
+
+                    b.HasData(
+                        new
+                        {
+                            RecipeStepId = 3,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            RecipeStepId = 5,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            RecipeStepId = 6,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            RecipeStepId = 10,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            RecipeStepId = 11,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            RecipeStepId = 1,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            RecipeStepId = 3,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            RecipeStepId = 2,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            RecipeStepId = 5,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            RecipeStepId = 7,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            RecipeStepId = 2,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            RecipeStepId = 4,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            RecipeStepId = 3,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            RecipeStepId = 9,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            RecipeStepId = 10,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            RecipeStepId = 7,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            RecipeStepId = 6,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            RecipeStepId = 1,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            RecipeStepId = 3,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            RecipeStepId = 6,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            RecipeStepId = 9,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            RecipeStepId = 10,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            RecipeStepId = 7,
+                            RecipeId = 5
+                        });
                 });
 
             modelBuilder.Entity("api.Models.RecipeStep", b =>
@@ -484,23 +753,80 @@ namespace api.Migrations
                     b.HasKey("RecipeStepId");
 
                     b.ToTable("RecipeStep");
+
+                    b.HasData(
+                        new
+                        {
+                            RecipeStepId = 1,
+                            RecipeStepDescription = "step 1"
+                        },
+                        new
+                        {
+                            RecipeStepId = 2,
+                            RecipeStepDescription = "step 2"
+                        },
+                        new
+                        {
+                            RecipeStepId = 3,
+                            RecipeStepDescription = "step 3"
+                        },
+                        new
+                        {
+                            RecipeStepId = 4,
+                            RecipeStepDescription = "step 4"
+                        },
+                        new
+                        {
+                            RecipeStepId = 5,
+                            RecipeStepDescription = "step 5"
+                        },
+                        new
+                        {
+                            RecipeStepId = 6,
+                            RecipeStepDescription = "step 6"
+                        },
+                        new
+                        {
+                            RecipeStepId = 7,
+                            RecipeStepDescription = "step 7"
+                        },
+                        new
+                        {
+                            RecipeStepId = 8,
+                            RecipeStepDescription = "step 8"
+                        },
+                        new
+                        {
+                            RecipeStepId = 9,
+                            RecipeStepDescription = "step 9"
+                        },
+                        new
+                        {
+                            RecipeStepId = 10,
+                            RecipeStepDescription = "step 10"
+                        },
+                        new
+                        {
+                            RecipeStepId = 11,
+                            RecipeStepDescription = "step 11"
+                        });
                 });
 
             modelBuilder.Entity("api.Models.Recipe", b =>
                 {
-                    b.HasOne("api.Models.Cuisine", null)
+                    b.HasOne("api.Models.Cuisine", "Cuisine")
                         .WithMany("Recipes")
                         .HasForeignKey("CuisineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("api.Models.DishType", null)
+                    b.HasOne("api.Models.DishType", "DishType")
                         .WithMany("Recipes")
                         .HasForeignKey("DishTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("api.Models.Rating", null)
+                    b.HasOne("api.Models.Rating", "Rating")
                         .WithMany("Recipes")
                         .HasForeignKey("RatingId")
                         .OnDelete(DeleteBehavior.Cascade)

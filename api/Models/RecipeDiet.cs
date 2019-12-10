@@ -1,15 +1,23 @@
-﻿namespace api.Models {
-    public class RecipeDiet {
-        public int DietId { get; set; }
-        public Diet Diet { get; set; }
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
-        public int RecipeId { get; set; }
-        public Recipe Recipe { get; set; }
+namespace api.Models
+{
+  public class RecipeDiet
+  {
+    [JsonIgnore]
+    public int DietId { get; set; }
+    public virtual Diet Diet { get; set; }
+    [JsonIgnore]
+    public int RecipeId { get; set; }
+    [JsonIgnore]
+    public virtual Recipe Recipe { get; set; }
 
-        public RecipeDiet() { }
-        public RecipeDiet(int dietId, int recipeId) {
-            DietId = dietId;
-            RecipeId = recipeId;
-        }
+    public RecipeDiet() { }
+    public RecipeDiet(int dietId, int recipeId)
+    {
+      DietId = dietId;
+      RecipeId = recipeId;
     }
+  }
 }
