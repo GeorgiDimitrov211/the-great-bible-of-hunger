@@ -19,8 +19,14 @@ namespace api.Controllers
     [HttpGet]
     public ActionResult<IEnumerable<Recipe>> GetRecipes()
     {
-      return _context.Recipes.Include(x => x.RecipeDiets).ThenInclude(x => x.Diet).ToList();
+      return _context.Recipes.Include(x => x.RecipeDiets).ThenInclude(x => x.Diet).Include(x => x.RecipeIngredients).ThenInclude(x => x.Ingredient).Include(x => x.RecipeRecipeSteps).ThenInclude(x => x.RecipeStep).ToList();
     }
+
+    // [HttpGet]
+    // public ActionResult<IEnumerable<Recipe>> GetRecipes()
+    // {
+    //   return _context.Recipes.Include(x => x.RecipeDiets).ThenInclude(x => x.Diet).ToList();
+    // }
 
     // // Get a specific command by number
     // [HttpGet("{id}")]

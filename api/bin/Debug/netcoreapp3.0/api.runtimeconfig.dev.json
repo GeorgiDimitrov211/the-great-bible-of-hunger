@@ -1,9 +1,9 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/home/elma/.dotnet/store/|arch|/|tfm|",
-      "/home/elma/.nuget/packages",
-      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+      "/Users/georgidimitrov/.dotnet/store/|arch|/|tfm|",
+      "/Users/georgidimitrov/.nuget/packages",
+      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
     ]
   }
 }

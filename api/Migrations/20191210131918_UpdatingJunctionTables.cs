@@ -2,7 +2,7 @@
 
 namespace api.Migrations
 {
-    public partial class CreateRecipeSteps : Migration
+    public partial class UpdatingJunctionTables : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -221,8 +221,8 @@ namespace api.Migrations
                 columns: new[] { "DishTypeId", "Name" },
                 values: new object[,]
                 {
-                    { 3, "Lunch" },
                     { 4, "Dessert" },
+                    { 3, "Lunch" },
                     { 1, "Breakfast" },
                     { 2, "Dinner" }
                 });
@@ -232,24 +232,24 @@ namespace api.Migrations
                 columns: new[] { "IngredientId", "ImageURL", "Name", "Type" },
                 values: new object[,]
                 {
-                    { 11, "url", "Mushrooms", "Vegetable" },
+                    { 12, "url", "Peas", "Vegetable" },
                     { 18, "url", "Rigatoni", "Pasta" },
                     { 17, "url", "Macaroni", "Pasta" },
                     { 16, "url", "Spahetti", "Pasta" },
                     { 15, "url", "Lasagne", "Pasta" },
                     { 14, "url", "Beans", "Grain" },
                     { 13, "url", "Pumpkin", "Vegetable" },
-                    { 12, "url", "Peas", "Vegetable" },
                     { 10, "url", "Eggplant", "Vegetable" },
-                    { 6, "url", "Asparagus", "Vegetable" },
+                    { 11, "url", "Mushrooms", "Vegetable" },
                     { 8, "url", "Lettuce", "Vegetable" },
+                    { 9, "url", "Leeks", "Vegetable" },
                     { 7, "url", "Chilli peppers", "Vegetable" },
+                    { 6, "url", "Asparagus", "Vegetable" },
                     { 5, "url", "Onion", "Vegetable" },
                     { 4, "url", "Potato", "Vegetable" },
                     { 3, "url", "Pork", "Meat" },
                     { 2, "url", "Cucumber", "Vegetable" },
-                    { 1, "url", "Tomato", "Vegetable" },
-                    { 9, "url", "Leeks", "Vegetable" }
+                    { 1, "url", "Tomato", "Vegetable" }
                 });
 
             migrationBuilder.InsertData(
@@ -258,8 +258,26 @@ namespace api.Migrations
                 values: new object[,]
                 {
                     { 2, 156, 4.2999999999999998 },
-                    { 1, 232, 5.0 },
-                    { 3, 20, 3.7999999999999998 }
+                    { 3, 20, 3.7999999999999998 },
+                    { 1, 232, 5.0 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "RecipeStep",
+                columns: new[] { "RecipeStepId", "RecipeStepDescription" },
+                values: new object[,]
+                {
+                    { 10, "step 10" },
+                    { 1, "step 1" },
+                    { 2, "step 2" },
+                    { 3, "step 3" },
+                    { 4, "step 4" },
+                    { 5, "step 5" },
+                    { 6, "step 6" },
+                    { 7, "step 7" },
+                    { 8, "step 8" },
+                    { 9, "step 9" },
+                    { 11, "step 11" }
                 });
 
             migrationBuilder.InsertData(
@@ -281,8 +299,75 @@ namespace api.Migrations
                 {
                     { 1, 1 },
                     { 3, 3 },
+                    { 2, 3 },
+                    { 2, 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "RecipeIngredients",
+                columns: new[] { "IngredientId", "RecipeId" },
+                values: new object[,]
+                {
+                    { 7, 4 },
+                    { 9, 4 },
+                    { 12, 4 },
+                    { 3, 5 },
+                    { 2, 5 },
+                    { 6, 5 },
+                    { 12, 5 },
+                    { 4, 4 },
+                    { 11, 5 },
+                    { 17, 5 },
+                    { 1, 2 },
+                    { 17, 2 },
+                    { 12, 2 },
+                    { 5, 2 },
+                    { 9, 5 },
+                    { 10, 3 },
+                    { 8, 4 },
+                    { 15, 1 },
+                    { 4, 3 },
+                    { 9, 1 },
+                    { 3, 1 },
+                    { 8, 1 },
+                    { 11, 1 },
+                    { 4, 1 },
+                    { 3, 3 },
+                    { 10, 1 },
+                    { 2, 3 },
+                    { 5, 3 },
+                    { 8, 3 },
+                    { 1, 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "RecipeRecipeSteps",
+                columns: new[] { "RecipeStepId", "RecipeId" },
+                values: new object[,]
+                {
+                    { 1, 2 },
+                    { 3, 2 },
+                    { 7, 5 },
+                    { 10, 5 },
+                    { 9, 5 },
                     { 2, 2 },
-                    { 2, 3 }
+                    { 6, 5 },
+                    { 2, 3 },
+                    { 1, 5 },
+                    { 3, 1 },
+                    { 5, 1 },
+                    { 6, 1 },
+                    { 10, 1 },
+                    { 11, 1 },
+                    { 6, 4 },
+                    { 7, 4 },
+                    { 10, 4 },
+                    { 5, 2 },
+                    { 9, 3 },
+                    { 3, 3 },
+                    { 4, 3 },
+                    { 3, 5 },
+                    { 7, 2 }
                 });
 
             migrationBuilder.CreateIndex(
