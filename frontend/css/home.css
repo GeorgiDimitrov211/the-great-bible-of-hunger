@@ -11,7 +11,7 @@ orange boxes. */
 /* This targets the last orange box and
 gives it a higher margin-bottom. */
 .home__container > :last-of-type {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 /* The design of orange boxes. */
@@ -21,7 +21,10 @@ gives it a higher margin-bottom. */
     padding: 20px;
     margin: 25px 0px;
 }
-
+.home__position {
+    position: relative;
+    height: 260px;
+}
 /* The flexbox of these orange boxes. */
 .home__lets-cook--flexie, .home__recommended--flexie {
     display: flex;
@@ -58,4 +61,16 @@ be positioned differently. */
 .home__lets-cook-image, .home__recommended-image {
     float: right;
     opacity: 0.9;
+}
+
+.home__image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 6px;
+}
+.home__number {
+    position: absolute;
+    top: 2%;
+    right: 2%;
 }

@@ -5,6 +5,12 @@
     --orange: #FFB119;
     --opacity: 5%;
 }
+section:not(.displayed) {
+    display: none;
+}
+section.displayed {
+    display: block;
+}
 
 body {
     min-height: var(--vh);
@@ -57,3 +63,4 @@ p {
     color: var(--black);
     font-size: 15px;
 }
+
