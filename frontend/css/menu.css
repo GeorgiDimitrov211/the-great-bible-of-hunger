@@ -42,6 +42,7 @@
 .filter__header,
 .glide__indicator {
     font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
 }
 
 
