@@ -54,3 +54,7 @@
 /home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/bin/Debug/netcoreapp3.0/System.ComponentModel.Annotations.dll
 /home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/bin/Debug/netcoreapp3.0/System.Diagnostics.DiagnosticSource.dll
 /home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/bin/Debug/netcoreapp3.0/System.Runtime.CompilerServices.Unsafe.dll
+/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/bin/Debug/netcoreapp3.0/Microsoft.AspNetCore.JsonPatch.dll
+/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/bin/Debug/netcoreapp3.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/bin/Debug/netcoreapp3.0/Newtonsoft.Json.dll
+/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/bin/Debug/netcoreapp3.0/Newtonsoft.Json.Bson.dll

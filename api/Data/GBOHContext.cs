@@ -20,7 +20,6 @@ namespace api.Data {
         public DbSet<RecipeRecipeStep> RecipeRecipeSteps { get; set; }
         public DbSet<RecipeIngredient> RecipeIngredients { get; set; }
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             modelBuilder.Entity<Cuisine>().ToTable("Cuisine");
             modelBuilder.Entity<Diet>().ToTable("Diet");
