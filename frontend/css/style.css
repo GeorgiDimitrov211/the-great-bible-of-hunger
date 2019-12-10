@@ -9,6 +9,7 @@
 body {
     min-height: var(--vh);
     background-color: var(--white);
+    overflow-x: hidden;
 }
 
 /* 

@@ -6,15 +6,18 @@
     bottom: -10%;
     opacity: 1;
     transition: .5s all;
-    
+
 }
+
 .filter {
     height: 0vh;
 }
+
 .menu__opened {
-    height: 70vh;
+    height: 80vh;
     z-index: 999;
 }
+
 .submit-filter {
     position: absolute;
     background: #FFB11A;
@@ -28,12 +31,19 @@
     display: none;
     justify-content: center;
     align-items: center;
+
     color: white;
     font-weight: 900;
     font-size: 20px;
 }
 
-
+.glide__slide,
+.submit-filter,
+.filter__header,
+.glide__indicator {
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+}
 
 
 /* Setting up sliders */
@@ -42,7 +52,9 @@
     text-align: center;
     font-weight: 600;
     transition: 1s all;
+    color: #e0dddd;
 }
+
 .glide__slide svg path {
     fill: #e0dddd;
     transition: 1s fill;
@@ -53,7 +65,8 @@
     /* transition: all 1s ease-in-out; */
     font-weight: 700;
 }
-.glide__slide--active svg path{
+
+.glide__slide--active svg path {
     fill: #746F6F;
 }
 
@@ -114,6 +127,7 @@
 .glide__slide--time {
     display: flex;
 }
+
 .glide__time,
 .glide__cuisine {
     font-size: .8em;
@@ -155,8 +169,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    position: absolute;
-    bottom: 10%;
+    position: fixed;
+    bottom: 16%;
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 3px 4px 10px rgba(248, 0, 0, 0.3);
@@ -164,13 +178,60 @@
 
 /* Media quer */
 @media only screen and (min-device-width : 375px) and (min-device-height : 700px) {
+
     /* Styles */
     .filter {
         height: 0vh;
     }
+
     .menu__opened {
         height: 60vh;
         z-index: 999;
     }
+    .menu__trigger {
+        bottom: 10%;
     }
-    
+}
+
+
+
+
+
+
+
+
+
+/* Fixed naviagtion style */
+
+.fixed-nav {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: var(--white);
+}
+
+.fixed-nav__wrapper {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+.fixed-nav__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.fixed-nav__link svg {
+    margin-bottom: 7px;
+    height: 25px;
+    width: auto;
+}
+
+.fixed-nav__text {
+    font-family: 'Nunito Sans', sans-serif;
+    color: #B8B8B9;
+}
