@@ -18,11 +18,16 @@
 .guide__img {
     width: 45%;
     height: 45%;
+    padding: 0px 20px 0px 0px;
 }
 .guide__text-container {
     display: none;
     flex-flow: column wrap;
     padding: 24px;
+    margin-bottom: 100px;
+}
+.guide__text-container > * {
+    padding: 10px 0px 0px 0px;
 }
 .guide__text-container.displayed {
     display: flex;
@@ -39,9 +44,10 @@
 .ingredient__stuff-container.displayed {
     display: flex;
     flex-flow: column;
+    margin-bottom: 100px;
 }
 .ingredient__ingredients-container > * {
-    padding: 0px 10px 0px 20px;
+    padding: 0px 20px 0px 0px;
 }
 .guide__button-container {
     position: fixed;
@@ -49,7 +55,7 @@
     flex-flow: row nowrap;
     bottom: 30px;
     left: calc(50% - 70px); /*60 + 10, button + margin*/ 
-    z-index: 1000;
+    z-index: 998;
 }
 .guide__step-button--decrease, .guide__step-button--increase {
     height: 60px;
@@ -66,7 +72,7 @@
     box-shadow: 3px 4px 10px rgba(248, 0, 0, 0.3);
 }
 .guide__step-button--decrease {
-    background-color: #9999A0;
+    background-color: var(--black);
     box-shadow: 3px 4px 10px rgba(000, 0, 0, 0.3);
 }
 .guide__arrow-forward, .guide__arrow-backward {
@@ -76,9 +82,11 @@
     border-radius: 50px;
     width: fit-content;
     height: 30px;
-    background: linear-gradient(to right, rebeccapurple var(--fill), gold var(--fill));
-    margin: 24px;
+    background: linear-gradient(to right, var(--orange) var(--fill), var(--black) var(--fill));
     color: var(--white);
-    text-align: center;
+    text-align: left;
+    padding: 0px 0px 0px 10px;
     line-height: 30px;
+    margin: 0px 24px 24px 24px;
+    font-family: 'Nunito Sans', sans-serif;
 }

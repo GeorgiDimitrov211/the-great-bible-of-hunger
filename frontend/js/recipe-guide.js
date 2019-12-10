@@ -68,10 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function setBarry(percentage) {
+        var limited = percentage;
+        var limitedPercentage = limited.toFixed(0);
         let barry = document.querySelector(".guide__progressbar");
         barry.style.setProperty('--fill', percentage + '%');
-        barry.innerText = percentage + '%';
+        barry.innerText = limitedPercentage + '%';
     }
+    
 });
-
-//progress bar & position of the buttons
