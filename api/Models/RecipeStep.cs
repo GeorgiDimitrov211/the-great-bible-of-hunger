@@ -1,5 +1,6 @@
 using api.Models;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace api.Models
 {
@@ -7,6 +8,8 @@ namespace api.Models
   {
     public int RecipeStepId { get; set; }
     public string RecipeStepDescription { get; set; }
+    [JsonIgnore]
+
     public virtual ICollection<RecipeRecipeStep> RecipeRecipeSteps { get; set; }
 
     public RecipeStep() { }

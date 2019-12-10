@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace api.Models
 {
@@ -6,10 +7,10 @@ namespace api.Models
   {
     [JsonIgnore]
     public int DietId { get; set; }
-
     public virtual Diet Diet { get; set; }
     [JsonIgnore]
     public int RecipeId { get; set; }
+    [JsonIgnore]
     public virtual Recipe Recipe { get; set; }
 
     public RecipeDiet() { }

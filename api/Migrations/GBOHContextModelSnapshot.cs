@@ -812,19 +812,19 @@ namespace api.Migrations
 
             modelBuilder.Entity("api.Models.Recipe", b =>
                 {
-                    b.HasOne("api.Models.Cuisine", null)
+                    b.HasOne("api.Models.Cuisine", "Cuisine")
                         .WithMany("Recipes")
                         .HasForeignKey("CuisineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("api.Models.DishType", null)
+                    b.HasOne("api.Models.DishType", "DishType")
                         .WithMany("Recipes")
                         .HasForeignKey("DishTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("api.Models.Rating", null)
+                    b.HasOne("api.Models.Rating", "Rating")
                         .WithMany("Recipes")
                         .HasForeignKey("RatingId")
                         .OnDelete(DeleteBehavior.Cascade)
