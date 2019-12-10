@@ -7139,23 +7139,23 @@
     ]
   },
   "packageFolders": {
-    "/home/vitek/.nuget/packages/": {},
+    "/home/elma/.nuget/packages/": {},
     "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/api.csproj",
+      "projectUniqueName": "/home/elma/Documents/VsCode/the-great-bible-of-hunger/api/api.csproj",
       "projectName": "api",
-      "projectPath": "/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/api.csproj",
-      "packagesPath": "/home/vitek/.nuget/packages/",
-      "outputPath": "/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/obj/",
+      "projectPath": "/home/elma/Documents/VsCode/the-great-bible-of-hunger/api/api.csproj",
+      "packagesPath": "/home/elma/.nuget/packages/",
+      "outputPath": "/home/elma/Documents/VsCode/the-great-bible-of-hunger/api/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/vitek/.nuget/NuGet/NuGet.Config"
+        "/home/elma/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"

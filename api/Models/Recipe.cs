@@ -14,6 +14,7 @@ namespace api.Models {
         public int DishTypeId { get; set; }
         public int RatingId { get; set; }
         public virtual ICollection<RecipeDiet> RecipeDiets { get; set; } = new List<RecipeDiet>();
+        //public virtual ICollection<RecipeDiet> RecipeDiets { get; set; } = new List<RecipeDiet>();
         public virtual ICollection<RecipeIngredient> RecipeIngredients { get; set; } = new List<RecipeIngredient>();
         public virtual ICollection<RecipeRecipeStep> RecipeRecipeSteps { get; set; } = new List<RecipeRecipeStep>();
         
