@@ -51,3 +51,9 @@ h4 {
     font-size: 24px;
     padding: 50px 0px 15px 0px;
 }
+
+p {
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--black);
+    font-size: 15px;
+}

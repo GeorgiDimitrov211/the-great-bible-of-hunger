@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/frontend/css/style.css">
     <link rel="stylesheet" href="/frontend/css/home.css">
     <link rel="stylesheet" href="/frontend/css/menu.css">
+    <link rel="stylesheet" href="/frontend/css/recipe-guide.css">
     <!-- Title -->
     <title>The great bible of hunger</title>
 </head>
@@ -194,11 +195,57 @@
         </div>
     </section>
 
+    <!-- Stuff for the create-recipe-guide-screen. -->
+    <section id="guide">
+        <div class="guide__container">
+            <span class="material-icons guide__spans guide__arrow-back">
+                arrow_back
+            </span>
+            <span class="material-icons guide__spans guide__bookmark">
+                bookmark_border
+            </span>
+        </div>
+
+        <div class="guide__container">
+            <img src="imagesandicons/chicken.png" alt="" class="guide__img">
+            <h1>
+                Chicken's <br> ass fried
+            </h1>
+        </div>
+
+        <div class="guide__progressbar">
+
+        </div>
+
+        <div class="ingredient__stuff-container displayed">
+
+        </div>
+
+        <div class="guide__description-container">
+
+        </div>
+
+        <div class="guide__button-container">
+            <div class="guide__step-button--decrease">
+                <span class="material-icons guide__arrow-backward">
+                    arrow_back
+                </span>
+            </div>
+
+            <div class="guide__step-button--increase">
+                <span class="material-icons guide__arrow-forward">
+                    arrow_forward
+                </span>
+            </div>
+        </div>
+
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script src="/frontend/js/script.js"></script>
     <script src="/frontend/js/home.js"></script>
     <script src="/frontend/js/menu.js"></script>
+    <script src="/frontend/js/recipe-guide.js"></script>
 </body>
 
 </html>

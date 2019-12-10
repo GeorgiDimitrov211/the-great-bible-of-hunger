@@ -1,0 +1,92 @@
+.guide__container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 24px;
+    flex-basis: 50%;
+    align-items: center;
+}
+.guide__spans {
+    font-size: 35px;
+}
+.guide__arrow-back {
+    color: var(--black);
+}
+.guide__bookmark {
+    color: var(--black);
+}
+.guide__img {
+    width: 45%;
+    height: 45%;
+    padding: 0px 20px 0px 0px;
+}
+.guide__text-container {
+    display: none;
+    flex-flow: column wrap;
+    padding: 24px;
+    margin-bottom: 150px;
+}
+.guide__text-container > * {
+    padding: 10px 0px 0px 0px;
+}
+.guide__text-container.displayed {
+    display: flex;
+}
+.ingredient__ingredients-container {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 24px;
+    align-items: center;
+}
+.ingredient__stuff-container {
+    display: none;
+}
+.ingredient__stuff-container.displayed {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 150px;
+}
+.ingredient__ingredients-container > * {
+    padding: 0px 20px 0px 0px;
+}
+.guide__button-container {
+    position: fixed;
+    display: flex;
+    flex-flow: row nowrap;
+    bottom: 80px;
+    left: calc(50% - 70px); /*60 + 10, button + margin*/ 
+    z-index: 998;
+}
+.guide__step-button--decrease, .guide__step-button--increase {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+.guide__step-button--increase {
+    background: var(--orange);
+    box-shadow: 3px 4px 10px rgba(248, 0, 0, 0.3);
+}
+.guide__step-button--decrease {
+    background-color: var(--black);
+    box-shadow: 3px 4px 10px rgba(000, 0, 0, 0.3);
+}
+.guide__arrow-forward, .guide__arrow-backward {
+    color: var(--white);
+}
+.guide__progressbar {
+    border-radius: 50px;
+    width: fit-content;
+    height: 30px;
+    background: linear-gradient(to right, var(--orange) var(--fill), var(--black) var(--fill));
+    color: var(--white);
+    text-align: left;
+    padding: 0px 0px 0px 10px;
+    line-height: 30px;
+    margin: 0px 24px 24px 24px;
+    font-family: 'Nunito Sans', sans-serif;
+}
