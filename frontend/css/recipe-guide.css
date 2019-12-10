@@ -24,7 +24,7 @@
     display: none;
     flex-flow: column wrap;
     padding: 24px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 .guide__text-container > * {
     padding: 10px 0px 0px 0px;
@@ -44,7 +44,7 @@
 .ingredient__stuff-container.displayed {
     display: flex;
     flex-flow: column;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 .ingredient__ingredients-container > * {
     padding: 0px 20px 0px 0px;
@@ -53,7 +53,7 @@
     position: fixed;
     display: flex;
     flex-flow: row nowrap;
-    bottom: 30px;
+    bottom: 80px;
     left: calc(50% - 70px); /*60 + 10, button + margin*/ 
     z-index: 998;
 }
