@@ -1,7 +1,7 @@
 /* This targets the h4 header and the two
 orange boxes. */
 .home__container {
-    display: flex;
+    display: none;
     flex-flow: column;
     justify-content: space-around;
     padding: 24px;
