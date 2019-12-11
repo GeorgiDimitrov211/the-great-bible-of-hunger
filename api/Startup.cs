@@ -21,12 +21,24 @@ namespace api
             Configuration = configuration;
         }
 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
             services.AddDbContext<GBOHContext>
                 (opt => opt.UseSqlServer(Configuration.GetConnectionString("GBOHContext")));
+            
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:5500", "http://localhost:5501");
+                });
+            });
+
             services.AddMvc(option => option.EnableEndpointRouting = false).AddNewtonsoftJson(opt => {
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
@@ -35,6 +47,8 @@ namespace api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(MyAllowSpecificOrigins); 
+
             app.UseMvc();
             
             if (!env.IsDevelopment())
