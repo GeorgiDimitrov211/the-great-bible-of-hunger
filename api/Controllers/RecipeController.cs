@@ -15,75 +15,38 @@ namespace api.Controllers
 
     public RecipeController(GBOHContext context) => _context = context;
 
-    // Get all commands from the database
+    // Get all recipes from the database
     [HttpGet]
     public ActionResult<IEnumerable<Recipe>> GetRecipes()
     {
 
-      var recipeDiets = _context.Recipes.Include(x => x.RecipeDiets).ThenInclude(x => x.Diet)
-                                        .Include(x => x.RecipeIngredients).ThenInclude(x => x.Ingredient)
-                                        .Include(x => x.RecipeRecipeSteps).ThenInclude(x => x.RecipeStep)
-                                        .Include(x => x.Cuisine)
-                                        .Include(x => x.Rating)
-                                        .Include(x => x.DishType);
-
-
-      return recipeDiets.ToList();
+      return _context.Recipes
+        .Include(x => x.RecipeDiets).ThenInclude(x => x.Diet)
+        .Include(x => x.RecipeIngredients).ThenInclude(x => x.Ingredient)
+        .Include(x => x.RecipeRecipeSteps).ThenInclude(x => x.RecipeStep)
+        .Include(x => x.Cuisine)
+        .Include(x => x.Rating)
+        .Include(x => x.DishType)
+        .ToList();
     }
 
-    // [HttpGet]
-    // public ActionResult<IEnumerable<Recipe>> GetRecipes()
-    // {
-    //   return _context.Recipes.Include(x => x.RecipeDiets).ThenInclude(x => x.Diet).ToList();
-    // }
-
-    // // Get a specific command by number
-    // [HttpGet("{id}")]
-    // public ActionResult<Command> GetCommandItem(int id)
-    // {
-    //   var commandItem = _context.CommandItems.Find(id);
-    //   if (commandItem == null)
-    //   {
-    //     return NotFound();
-    //   }
-    //   return commandItem;
-    // }
-
-    // // Post a new command to the database
-    // [HttpPost]
-    // public ActionResult<Command> PostCommandItem(Command command)
-    // {
-    //   _context.CommandItems.Add(command);
-    //   _context.SaveChanges();
-    //   return CreatedAtAction("GetCommandItem", new Command{Id = command.Id}, command);
-    // }
-
-    // // Put an existing command
-    // [HttpPut("{id}")]
-    // public ActionResult PutCommandItem(int id, Command command)
-    // {
-    //   if (id != command.Id)
-    //   {
-    //     return BadRequest();
-    //   }
-    //   _context.Entry(command).State = EntityState.Modified;
-    //   _context.SaveChanges();
-
-    //   return NoContent();
-    // }
-
-    // // Delete a command from the database
-    // [HttpDelete("{id}")]
-    // public ActionResult<Command> DeleteCommandItem(int id)
-    // {
-    //   var commandItem = _context.CommandItems.Find(id);
-    //   if (commandItem == null)
-    //   {
-    //     return NotFound();
-    //   }
-    //   _context.CommandItems.Remove(commandItem);
-    //   _context.SaveChanges();
-    //   return commandItem;
-    // }
+    // Get a specific recipe by id
+    [HttpGet("{id}")]
+    public ActionResult<Recipe> GetRecipeById(int id)
+    {
+      var recipe = _context.Recipes
+        .Include(x => x.RecipeDiets).ThenInclude(x => x.Diet)
+        .Include(x => x.RecipeIngredients).ThenInclude(x => x.Ingredient)
+        .Include(x => x.RecipeRecipeSteps).ThenInclude(x => x.RecipeStep)
+        .Include(x => x.Cuisine)
+        .Include(x => x.Rating)
+        .Include(x => x.DishType)
+        .SingleOrDefault(x => x.RecipeId == id);
+      if (recipe == null)
+      {
+        return NotFound();
+      }
+      return recipe;
+    }
   }
 }
