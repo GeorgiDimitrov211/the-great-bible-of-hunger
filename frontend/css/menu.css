@@ -42,7 +42,7 @@
 .filter__header,
 .glide__indicator {
     font-family: 'Nunito Sans', sans-serif;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 
@@ -227,11 +227,12 @@
 }
 .fixed-nav__link svg {
     margin-bottom: 7px;
-    height: 25px;
+    height: 22px;
     width: auto;
 }
 
 .fixed-nav__text {
     font-family: 'Nunito Sans', sans-serif;
     color: #B8B8B9;
+    font-size: .7em;
 }

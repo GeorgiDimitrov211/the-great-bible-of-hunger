@@ -5,6 +5,12 @@
     --orange: #FFB119;
     --opacity: 5%;
 }
+section:not(.displayed) {
+    display: none;
+}
+section.displayed {
+    display: block;
+}
 
 body {
     min-height: var(--vh);
@@ -56,4 +62,11 @@ p {
     font-family: 'Nunito Sans', sans-serif;
     color: var(--black);
     font-size: 15px;
+}
+
+/* back button should be the same for all of the pages*/
+.back-button {
+    /* margin-top: 50px;
+    margin-left: 10px; */
+    font-size: 30px;
 }
