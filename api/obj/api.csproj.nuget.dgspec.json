@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/Users/georgidimitrov/the-great-bible-of-hunger/api/api.csproj": {}
+    "/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/api.csproj": {}
   },
   "projects": {
-    "/Users/georgidimitrov/the-great-bible-of-hunger/api/api.csproj": {
+    "/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/georgidimitrov/the-great-bible-of-hunger/api/api.csproj",
+        "projectUniqueName": "/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/api.csproj",
         "projectName": "api",
-        "projectPath": "/Users/georgidimitrov/the-great-bible-of-hunger/api/api.csproj",
-        "packagesPath": "/Users/georgidimitrov/.nuget/packages/",
-        "outputPath": "/Users/georgidimitrov/the-great-bible-of-hunger/api/obj/",
+        "projectPath": "/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/api.csproj",
+        "packagesPath": "/home/vitek/.nuget/packages/",
+        "outputPath": "/home/vitek/codebase/school-stuff/the-great-bible-of-hunger/api/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/georgidimitrov/.nuget/NuGet/NuGet.Config"
+          "/home/vitek/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -74,6 +74,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -82,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }
