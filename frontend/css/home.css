@@ -1,7 +1,15 @@
 /* This targets the h4 header and the two
 orange boxes. */
+.home__top-container {
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-left: 10px;
+    padding: 0px;
+}
 .home__container {
-    display: none;
+    display: flex;
     flex-flow: column;
     justify-content: space-around;
     padding: 24px;

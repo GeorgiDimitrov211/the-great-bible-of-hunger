@@ -66,45 +66,47 @@
         </div>
     </section>
 
-    <section id="home-page" class="home__container">
-        <div>
+    <section id="home-page">
+        <div class="home__top-container">
             <h4>Student Bible</h4>
         </div>
 
-        <div class="home__lets-cook home__position" id="lets-cook__button">
-            <div class="home__lets-cook--flexie home__spacebetween">
-                <h1>Let's <br> cook</h1>
-                <h3 class="home__number">01</h3>
+        <div class="home__container">
+            <div class="home__lets-cook home__position" id="lets-cook__button">
+                <div class="home__lets-cook--flexie home__spacebetween">
+                    <h1>Let's <br> cook</h1>
+                    <h3 class="home__number">01</h3>
+                </div>
+                <div class="home__lets-cook--flexie">
+                    <h2>See recipes created from <br>
+                        your virtual fridge</h2>
+                    <span class="material-icons home__icon home__icon-letscook">
+                        arrow_forward
+                    </span>
+                </div>
+                    <img class="home__image" src="/frontend/imagesandicons/letscookimg.png" alt="">
             </div>
-            <div class="home__lets-cook--flexie">
-                <h2>See recipes created from <br>
-                    your virtual fridge</h2>
-                <span class="material-icons home__icon home__icon-letscook">
-                    arrow_forward
-                </span>
-            </div>
-                <img class="home__image" src="/frontend/imagesandicons/letscookimg.png" alt="">
-        </div>
 
-        <div class="home__recommended home__position">
-            <div class="home__recommended--flexie home__spacebetween">
-                <h1>Reco- <br> mmended</h1>
-                <h3 class="home__number">02</h3>
+            <div class="home__recommended home__position">
+                <div class="home__recommended--flexie home__spacebetween">
+                    <h1>Reco- <br> mmended</h1>
+                    <h3 class="home__number">02</h3>
+                </div>
+                <div class="home__recommended--flexie">
+                    <h2>Get inspired</h2>
+                    <span class="material-icons home__icon home__icon-recommended">
+                        arrow_forward
+                    </span>
+                </div>
+                    <img class="home__image" src="/frontend/imagesandicons/recommendedimg.png" alt="">
             </div>
-            <div class="home__recommended--flexie">
-                <h2>Get inspired</h2>
-                <span class="material-icons home__icon home__icon-recommended">
-                    arrow_forward
-                </span>
-            </div>
-                <img class="home__image" src="/frontend/imagesandicons/recommendedimg.png" alt="">
         </div>
     </section>
 
     <section id="ingredients-page">
         <div class="ingredients__heading">
             <div>
-                <span class="material-icons back-button">
+                <span class="material-icons back-button" id="ingredients-page-back">
                     arrow_back
                 </span>
             </div>
@@ -287,8 +289,13 @@
             </div>
         </section>
 
-    <section class="reicpes-page">
-        <div class="recipe">
+    <section id="recipe-page">
+        <div class="recipe__container">
+            <span class="material-icons back-button" id="recipe-page-back">
+                arrow_back
+            </span>
+        </div>
+        <div class="recipe" id="recipe-to-guide-page">
             <div class="recipe__orange">
                 <h1 class="recipe__title">Chicken's<br>ass fried</h1>
             </div>
@@ -301,15 +308,18 @@
                 </div>
             </div>
         </div>
+        <span class="menu__trigger" id="menu__trigger--js">
+            <img src="/frontend/imagesandicons/filter.png">
+        </span>
     </section>
 
     <!-- Stuff for the create-recipe-guide-screen. -->
     <section id="guide">
-        <div class="guide__container">
-            <span class="material-icons guide__spans guide__arrow-back">
+        <div class="guide__top-container">
+            <span class="material-icons back-button" id="guide-page-back">
                 arrow_back
             </span>
-            <span class="material-icons guide__spans guide__bookmark">
+            <span class="material-icons guide__bookmark">
                 bookmark_border
             </span>
         </div>
@@ -325,7 +335,7 @@
 
         </div>
 
-        <div class="ingredient__stuff-container displayed">
+        <div class="ingredient__stuff-container guide__step-displayed">
 
         </div>
 

@@ -1,20 +1,23 @@
 /* Recipe page after you enter ingrediants */
-.home__container {
-    display: none;
+.recipe__container {
+    /* padding: 24px; */
+    margin-top: 50px;
+    margin-left: 10px;
 }
 .recipe {
-    margin-top: 20vh;
+    padding: 24px 0px;;
 }
 .recipe__info-photo {
     max-width: 100%;
 }
 .recipe__orange {
     height: 300px;
-    background: orange;
+    background: var(--orange);
     width: 90%;
     margin: auto;
     border-radius: 30px;
     position: relative;
+    margin-top: 20px;
 }
 .recipe__title {
     position: absolute;

@@ -31,6 +31,7 @@ let filterMenu = document.getElementById('filter__trigger--js');
 let submitButton = document.getElementById('submit-fliter--js'); // Hide if menu is not open
 
 menuButton.addEventListener('click', () => {
+        console.log("click");
         filterMenu.classList.add('menu__opened');
         filterMenu.style.bottom = "0%";
         submitButton.style.display = "flex";
