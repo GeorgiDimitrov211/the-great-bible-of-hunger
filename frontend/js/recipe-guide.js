@@ -3,14 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     var currentStep = 0;
     setBarry(0);
 
-
     (async function getRecipeData() {
         const getJson = await fetch("/frontend/js/fakeguide.json");
         const realJson = await getJson.json();
 
         realJson.ingredients.forEach(ingredient => {
             document.querySelector('.ingredient__stuff-container').innerHTML += `
-            <div class="ingredient__ingredients-container displayed">
+            <div class="ingredient__ingredients-container guide__step-displayed">
                 <div>
                     <h1>${ingredient.number}</h1>
                 </div>
@@ -62,9 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
         setBarry(progressFill);
 
         for (var amountOfTimesItHasRun = 0; amountOfTimesItHasRun < allForRecipeMaking.length; amountOfTimesItHasRun++) {
-            allForRecipeMaking[amountOfTimesItHasRun].classList.remove("displayed");
+            allForRecipeMaking[amountOfTimesItHasRun].classList.remove("guide__step-displayed");
         };
-        allForRecipeMaking[currentStep].classList.add("displayed");
+        allForRecipeMaking[currentStep].classList.add("guide__step-displayed");
     }
 
     function setBarry(percentage) {
