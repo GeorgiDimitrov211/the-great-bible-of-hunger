@@ -5,12 +5,6 @@
     --orange: #FFB119;
     --opacity: 5%;
 }
-section:not(.displayed) {
-    display: none;
-}
-section.displayed {
-    display: block;
-}
 
 body {
     min-height: var(--vh);
@@ -69,4 +63,20 @@ p {
     font-size: 30px;
     cursor: pointer;
     color: var(--black);
+}
+
+
+/* transitions */
+section:not(.displayed) {
+    /* display: none; */
+	max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+	/* transition: 1s opacity ease-in-out; */
+}
+section.displayed {
+    /* display: block; */
+    opacity: 1;
+    max-height: 999em;
+    transition: 1s all ease-in-out;
 }
