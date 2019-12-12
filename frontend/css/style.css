@@ -58,6 +58,14 @@ p {
     font-size: 15px;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 /* back button should be the same for all of the pages*/
 .back-button {
     font-size: 30px;
@@ -90,4 +98,8 @@ small.error {
     color: red;
     font-family: 'Nunito Sans', sans-serif;
     padding: .25rem 0;
+}
+.menu-active--js {
+    color: var(--black) !important;
+    fill: var(--black) !important;
 }

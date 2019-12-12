@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let ingredientsPageBack = document.getElementById('ingredients-page-back');
     let recipePageBack = document.getElementById('recipe-page-back');
 
+    // hide filter menu
+    let filterMenu = document.getElementById('menu__trigger--js');
+    filterMenu.style.display = 'none';
+
+    // fixed menu items
+    let fixedMenuSpans = document.getElementsByClassName('fixed-nav__text');
+    let fixedMenuIcons = document.getElementsByClassName('fixed-menu-icon');
+
     // get the element with the displayed and delete it depending 
     // on the page
     // Delete class from all function
@@ -38,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         removeDisplayedClass();
         ingredientsPage.classList.add('displayed');
         showFixedNavigation();
+        addActivemenu();
     })
 
     // Recipes page button
@@ -47,8 +56,26 @@ document.addEventListener("DOMContentLoaded", () => {
         homePage.classList.add('displayed');
         showFixedNavigation();
         recipePage.classList.remove('displayed');
+        //display menu from this page
+        filterMenu.style.display = 'flex';
+        addActivemenu();
     });
 
+    function addActivemenu() {
+        if (ingredientsPage.classList.contains('displayed')) {
+            fixedMenuSpans[1].classList.remove('menu-active--js');
+            fixedMenuIcons[1].classList.remove('menu-active--js');
+            fixedMenuSpans[0].classList.add('menu-active--js');
+            fixedMenuIcons[0].classList.add('menu-active--js');
+        } else if (homePage.classList.contains('displayed')) {
+            fixedMenuSpans[0].classList.remove('menu-active--js');
+            fixedMenuIcons[0].classList.remove('menu-active--js');
+            fixedMenuSpans[1].classList.add('menu-active--js');
+            fixedMenuIcons[1].classList.add('menu-active--js');
+        } else {
+            console.log('This is the worst code I have written in my life')
+        }
+    }
     // Recipe to guide page - button
     recipeToGuidePage.addEventListener('click', () => {
         removeDisplayedClass();
@@ -63,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         removeDisplayedClass();
         ingredientsPage.classList.add('displayed');
         showFixedNavigation();
+        addActivemenu();
     });
 
 
@@ -72,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
         removeDisplayedClass();
         showFixedNavigation();
         recipePage.classList.add('displayed');
-        
+
     })
 
     // ingredients Page Back Button
