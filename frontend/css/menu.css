@@ -7,7 +7,7 @@
     opacity: 1;
     transition: .5s all;
     z-index: 999;
-
+    text-transform: uppercase;
 }
 
 .filter {
