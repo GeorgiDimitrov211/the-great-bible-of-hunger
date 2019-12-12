@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         realJson.guide.forEach(step => {
-            document.querySelector('#guide').innerHTML += `
+            document.querySelector('.guide-content').innerHTML += `
             <div class="guide__text-container">
                 <div>
                     <h1>${step.number}</h1>
