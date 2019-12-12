@@ -1,10 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const baseUrl = "http://localhost:5000/api/ingredient";
+  let empty = false;
+
+  const ingredientsList = document.querySelector(".ingredients__list");
+  const errorMessage = document.querySelector(".ingredients__input-error");
 
   document.querySelector(".ingredients__submit-icon").addEventListener("click", () => {
     verifyInput();
   });
 
   document.querySelector("#ingredients__input-value").addEventListener("keydown", event => {
+    errorMessage.classList.remove("thrown");
     if (event.keyCode === 13) {
       verifyInput();
     }
@@ -13,37 +19,64 @@ document.addEventListener("DOMContentLoaded", () => {
   (async function getIngredients() {
     const savedIngredients = window.localStorage.getItem("saved-ingredients");
     if (savedIngredients) {
-      console.log("Making an API call with", savedIngredients);
-      // fake api call
-      const rawJson = await fetch("/frontend/js/fake.json");
-      const actualData = await rawJson.json();
-      actualData.ingredients.forEach(ingredient => {
-        const outputIngredient = document.createElement("figure");
-        outputIngredient.classList.add("ingredients__list__ingredient");
-        outputIngredient.innerHTML = `
-          <img src="${ingredient.ImageURL}">
-          <figcaption>${ingredient.Name}</figcaption>
-          <span class="ingredients__list__ingredient__type">${ingredient.Type}</span>
-        `;
-        document.querySelector(".ingredients__list").appendChild(outputIngredient);
+      const rawRefetchedIngredients = await fetch(baseUrl, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(savedIngredients)
+      });
+      const actualRefetchedIngredients = await rawRefetchedIngredients.json();
+      actualRefetchedIngredients.forEach(ingredient => {
+        renderIngredient(ingredient);
       });
       return;
     }
     else
     {
-      document.querySelector(".ingredients__list").innerHTML = "<h4>You have no ingredients saved, try adding some!</h4>";
+      empty = true;
+      ingredientsList.innerHTML = "<h5>You have no ingredients saved, try adding some!</h5>";
     };
   })();
 
-  async function submitIngredient(ingredientToBeSubmitted) {
-    console.log(ingredientToBeSubmitted);
+  async function fetchIngredient(ingredientQuery) {
+    const rawIngredient = await fetch(`${baseUrl}/${ingredientQuery}`);
+    const actualIngredient = await rawIngredient.json();
+    if (actualIngredient && actualIngredient.status) {
+      errorMessage.classList.add("thrown");
+      return;
+    }
+    renderIngredient(actualIngredient);
   };
 
   function verifyInput() {
     const inputValue = document.querySelector("#ingredients__input-value").value;
     if (inputValue && inputValue.length > 1) {
-      submitIngredient(inputValue);
+      fetchIngredient(inputValue);
+    } else {
+      errorMessage.classList.add("thrown");
     }
   };
 
+  function renderIngredient(ingredient) {
+    if (empty === true) {
+      ingredientsList.innerHTML = "<h5>Your ingredients:</h5>";
+      empty = false;
+    }
+    const outputIngredient = document.createElement("figure");
+    outputIngredient.classList.add("ingredients__list__ingredient");
+    outputIngredient.innerHTML = `
+      <figcaption>${ingredient.name}</figcaption>
+      <div class="ingredients__list__ingredient__data">
+        <img src="${ingredient.imageURL}">
+        <div class="ingredients__list__ingredient__type">${ingredient.type}</div>
+      </div>
+    `;
+    ingredientsList.append(outputIngredient);
+    let savedIngredients = window.localStorage.getItem("saved-ingredients");
+    if (savedIngredients) savedIngredients = savedIngredients.split(",");
+    if (!savedIngredients) savedIngredients = [];
+    if (!savedIngredients.includes(ingredient.ingredientId.toString())) savedIngredients.push(ingredient.ingredientId);
+    window.localStorage.setItem("saved-ingredients", savedIngredients.toString());
+  }
 });

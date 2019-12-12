@@ -80,3 +80,14 @@ section.displayed {
     max-height: 999em;
     transition: 1s all ease-in-out;
 }
+
+h5 {
+    font-family: 'Chau Philomene One', sans-serif;
+}
+
+small.error {
+    font-size: .7rem;
+    color: red;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: .25rem 0;
+}
