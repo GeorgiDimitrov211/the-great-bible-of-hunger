@@ -4,6 +4,7 @@ using System.Linq;
 using api.Models;
 using Microsoft.EntityFrameworkCore;
 using api.Data;
+using System;
 
 namespace api.Controllers
 {
@@ -16,13 +17,13 @@ namespace api.Controllers
     public IngredientController(GBOHContext context) => _context = context;
 
     // Get all ingredients from the database
-    [HttpGet]
-    public ActionResult<IEnumerable<Ingredient>> GetIngredientsByIds(List<int>savedIngredients)
+    [HttpPost]
+    public ActionResult<IEnumerable<Ingredient>> GetIngredientsByIds([FromBody] string savedIdsAsStrings)
     {
       var results = new List<Ingredient>();
       var allIngredients = _context.Ingredients.ToList();
-      savedIngredients.ForEach(savedId => {
-        results.Add(allIngredients.Find(ingredient => ingredient.IngredientId == savedId));
+      Array.ForEach(savedIdsAsStrings.Split(","), savedId => {
+        results.Add(allIngredients.Find(ingredient => ingredient.IngredientId.ToString() == savedId));
       });
       return results;
     }

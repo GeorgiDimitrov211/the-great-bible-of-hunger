@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const baseUrl = "http://localhost:5000/api";
+  const baseUrl = "http://localhost:5000/api/ingredient";
   let empty = false;
 
   const ingredientsList = document.querySelector(".ingredients__list");
@@ -19,13 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
   (async function getIngredients() {
     const savedIngredients = window.localStorage.getItem("saved-ingredients");
     if (savedIngredients) {
-      console.log("Making an API call with", savedIngredients);
-
-      // const rawData = await fetch("/frontend/js/fake.json");
-      // const actualData = await rawData.json();
-      // actualData.ingredients.forEach(ingredient => {
-      //   renderIngredient(ingredient);
-      // });
+      const rawRefetchedIngredients = await fetch(baseUrl, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(savedIngredients)
+      });
+      const actualRefetchedIngredients = await rawRefetchedIngredients.json();
+      actualRefetchedIngredients.forEach(ingredient => {
+        renderIngredient(ingredient);
+      });
       return;
     }
     else
@@ -36,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
   async function fetchIngredient(ingredientQuery) {
-    const rawIngredient = await fetch(`${baseUrl}/ingredient/${ingredientQuery}`);
+    const rawIngredient = await fetch(`${baseUrl}/${ingredientQuery}`);
     const actualIngredient = await rawIngredient.json();
     if (actualIngredient && actualIngredient.status) {
       errorMessage.classList.add("thrown");
@@ -55,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function renderIngredient(ingredient) {
-    if (empty = true) {
+    if (empty === true) {
       ingredientsList.innerHTML = "<h5>Your ingredients:</h5>";
       empty = false;
     }
@@ -69,11 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
     ingredientsList.append(outputIngredient);
-    let savedIngredients = Array.from(window.localStorage.getItem("saved-ingredients"));
-    console.log("saved", savedIngredients);
+    let savedIngredients = window.localStorage.getItem("saved-ingredients");
+    if (savedIngredients) savedIngredients = savedIngredients.split(",");
     if (!savedIngredients) savedIngredients = [];
-    savedIngredients.push(ingredient.ingredientId);
-    window.localStorage.setItem("saved-ingredients", savedIngredients);
-    console.log("updated", Array.from(window.localStorage.getItem("saved-ingredients")));
+    if (!savedIngredients.includes(ingredient.ingredientId.toString())) savedIngredients.push(ingredient.ingredientId);
+    window.localStorage.setItem("saved-ingredients", savedIngredients.toString());
   }
 });
