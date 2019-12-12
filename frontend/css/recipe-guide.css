@@ -1,6 +1,6 @@
 .guide__container {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row;
     justify-content: space-between;
     padding: 20px 24px;
     flex-basis: 50%;
@@ -10,14 +10,10 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: center;
     margin-top: 50px;
     margin-left: 10px;
     margin-right: 10px;
 }
-/* .guide__spans {
-    font-size: 35px;
-} */
 .guide__bookmark {
     color: var(--black);
     font-size: 30px;
@@ -88,7 +84,6 @@
 }
 .guide__progressbar {
     border-radius: 50px;
-    width: fit-content;
     height: 30px;
     background: linear-gradient(to right, var(--orange) var(--fill), var(--black) var(--fill));
     color: var(--white);

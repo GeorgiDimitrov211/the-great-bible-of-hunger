@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let recipePage = document.getElementById('recipe-page');
     let ingredientsPage = document.getElementById('ingredients-page');
     let recipeToGuidePage = document.getElementById('recipe-to-guide-page');
-    let guidePage = document.getElementById('guide');
+    let guidePage = document.getElementById('guide-page');
 
     //vars for back buttons:
     let ingredientsPageBack = document.getElementById('ingredients-page-back');
@@ -90,12 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // guide page back button
-    let guidePageBack = document.getElementById('guide-page-back');
-    guidePageBack.addEventListener('click', () => {
-        console.log('clicked');
+    document.querySelector('.guide__page-back').addEventListener('click', () => {
         removeDisplayedClass();
         showFixedNavigation();
         recipePage.classList.add('displayed');
     })
-    // We need to apply black color to the current link!
 });
